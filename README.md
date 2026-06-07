@@ -10,7 +10,9 @@ CalcFlow is a modern and clean calculator application, inspired by the Samsung O
 
 ## 📸 Screenshots
 
-![CalcFlow UI](screenshots/Screenshot_20260607_175704.png)
+![CalcFlow UI 1](screenshots/Screenshot1.png)
+![CalcFlow UI 2](screenshots/Screenshot2.png)
+
 
 
 ## 🛠 Tech Stack
