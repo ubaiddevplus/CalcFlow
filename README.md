@@ -1,17 +1,16 @@
-# my_calculator
+​CalcFlow 🧮
+​CalcFlow is a modern and clean calculator application, inspired by the Samsung One UI design, built entirely with Flutter.
+​📱 Features
+​Modern UI: Clean and organized interface.
+​Smooth UX: Responsive and intuitive calculation experience.
+​Performance: Developed with Flutter for high performance and reliability.
+​📸 Screenshots
+​(Once you upload your images to the screenshots folder, replace the link below with your image name)
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🛠 Tech Stack
+​Framework: Flutter
+​Language: Dart
