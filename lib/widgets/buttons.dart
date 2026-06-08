@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class Buttons extends StatefulWidget {
   final Function(String) onBtnPressed;
   final bool backspace;
+  final VoidCallback onhistoryPressed;
   const Buttons({
     super.key,
     required this.onBtnPressed,
     required this.backspace,
+    required this.onhistoryPressed,
   });
 
   @override
@@ -31,7 +33,7 @@ class _ButtonsState extends State<Buttons> {
         padding: const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 20.0),
         child: Row(
           children: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.access_time)),
+            IconButton(onPressed: widget.onhistoryPressed, icon: Icon(Icons.access_time)),
             IconButton(onPressed: () {}, icon: Icon(Icons.linear_scale)),
             IconButton(onPressed: () {}, icon: Icon(Icons.calculate_outlined)),
             const Spacer(),

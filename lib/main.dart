@@ -3,6 +3,7 @@ import 'widgets/keyboard.dart';
 import 'widgets/mytextfield.dart';
 import 'widgets/calculator_logic.dart';
 import 'widgets/buttons.dart';
+import 'widgets/thedrawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,10 +59,12 @@ class CalculatorScreen extends StatefulWidget {
 
 class _CalculatorScreenState extends State<CalculatorScreen> {
   final controller = ColoredExpressionController()..text = "0";
+  final GlobalKey<ScaffoldState> _ScaffoldKey = GlobalKey<ScaffoldState>();
 
   String expression = "";
   String result = "";
   List<String> operators = ["C", "÷", "✕", "-", "+", "="];
+  final List<String> history = [];
   void handleButtonPress(String btntext) {
     setState(() {
       if (controller.text == "0" &&
@@ -125,6 +128,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           if (!operators.contains(
             controller.text[controller.text.length - 1],
           )) {
+            history.add(controller.text);
             controller.text = CalculatorLogic.calculateResult(controller.text);
             result = "";
           } else {
@@ -140,8 +144,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 0,
                 controller.text.length - 1,
               );
+              result = CalculatorLogic.calculateResult(controller.text);
             } else {
               controller.text = "0";
+              result = "";
             }
           } else {
             controller.text += btntext;
@@ -168,6 +174,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _ScaffoldKey,
+      drawer: TheDrawer(history: history),
       backgroundColor: Colors.black,
 
       body: SafeArea(
@@ -186,6 +194,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               child: Buttons(
                 onBtnPressed: handleButtonPress,
                 backspace: controller.text.isNotEmpty,
+                onhistoryPressed: () => _ScaffoldKey.currentState!.openDrawer(),
+                
               ),
             ),
             SizedBox(height: 20.0),
