@@ -3,16 +3,17 @@ import 'package:flutter/material.dart';
 class Buttons extends StatefulWidget {
   final Function(String) onBtnPressed;
   final bool backspace;
-  final VoidCallback onhistoryPressed;
+  final VoidCallback? onhistoryPressed;
   const Buttons({
     super.key,
     required this.onBtnPressed,
     required this.backspace,
-    required this.onhistoryPressed,
+     this.onhistoryPressed,
   });
 
   @override
   State<Buttons> createState() => _ButtonsState();
+  
 }
 
 class _ButtonsState extends State<Buttons> {

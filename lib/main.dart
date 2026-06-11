@@ -199,7 +199,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               ),
             ),
             SizedBox(height: 20.0),
-            Expanded(flex: 9, child: Keyboard(onBtnPressed: handleButtonPress)),
+            Expanded(flex: 9, child: Keyboard(onBtnPressed: handleButtonPress, )),
           ],
         ),
       ),
