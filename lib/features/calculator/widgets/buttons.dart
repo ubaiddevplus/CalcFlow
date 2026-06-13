@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:calcflow/core/constants/app_colors.dart';
 
 class Buttons extends StatefulWidget {
   final Function(String) onBtnPressed;
@@ -8,22 +9,20 @@ class Buttons extends StatefulWidget {
     super.key,
     required this.onBtnPressed,
     required this.backspace,
-     this.onhistoryPressed,
+    this.onhistoryPressed,
   });
 
   @override
   State<Buttons> createState() => _ButtonsState();
-  
 }
 
 class _ButtonsState extends State<Buttons> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 15,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: AppColors.background,
 
         //borderRadius: BorderRadius.circular(15),
         border: Border(
@@ -34,7 +33,10 @@ class _ButtonsState extends State<Buttons> {
         padding: const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 20.0),
         child: Row(
           children: [
-            IconButton(onPressed: widget.onhistoryPressed, icon: Icon(Icons.access_time)),
+            IconButton(
+              onPressed: widget.onhistoryPressed,
+              icon: Icon(Icons.access_time),
+            ),
             IconButton(onPressed: () {}, icon: Icon(Icons.linear_scale)),
             IconButton(onPressed: () {}, icon: Icon(Icons.calculate_outlined)),
             const Spacer(),
@@ -42,7 +44,9 @@ class _ButtonsState extends State<Buttons> {
               onPressed: () => widget.onBtnPressed("delete"),
               icon: Icon(
                 Icons.backspace_outlined,
-                color: widget.backspace ? Colors.green : Colors.grey,
+                color: widget.backspace
+                    ? AppColors.greenbtns
+                    : AppColors.unusedbtns,
               ),
             ),
           ],

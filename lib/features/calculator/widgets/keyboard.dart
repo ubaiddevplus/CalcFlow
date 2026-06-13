@@ -1,7 +1,8 @@
-import 'package:CalcFlow/widgets/calculator_button.dart';
+import 'package:calcflow/features/calculator/widgets/calculator_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../../core/constants/app_colors.dart';
 
 class Keyboard extends StatelessWidget {
   final Function(String) onBtnPressed;
@@ -67,10 +68,10 @@ class Keyboard extends StatelessWidget {
 
 Color _getBtnColor(String btnText) {
   if (["÷", "✕", "-", "+", "( )", "C", "%"].contains(btnText)) {
-    return Colors.blueGrey;
+    return AppColors.functionbtn;
   } else if (btnText == "=") {
-    return Colors.green;
+    return AppColors.greenbtns;
   } else {
-    return Colors.grey[850]!;
+    return AppColors.numberbtn;
   }
 }

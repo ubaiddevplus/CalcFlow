@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'widgets/keyboard.dart';
-import 'widgets/mytextfield.dart';
-import 'widgets/calculator_logic.dart';
-import 'widgets/buttons.dart';
-import 'widgets/thedrawer.dart';
+import 'features/calculator/widgets/keyboard.dart';
+import 'features/calculator/widgets/my_textfield.dart';
+import 'features/calculator/logic/calculator_logic.dart';
+import 'features/calculator/widgets/buttons.dart';
+import 'features/calculator/widgets/my_drawer.dart';
+import 'core/constants/app_colors.dart';
+import 'core/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,14 +26,14 @@ class ColoredExpressionController extends TextEditingController {
         spans.add(
           TextSpan(
             text: char,
-            style: TextStyle(color: Colors.green, fontSize: 48),
+            style: TextStyle(color: AppColors.textOperator, fontSize: 48),
           ),
         );
       } else {
         spans.add(
           TextSpan(
             text: char,
-            style: TextStyle(color: Colors.white, fontSize: 48),
+            style: TextStyle(color: AppColors.textPrimary, fontSize: 48),
           ),
         );
       }
@@ -46,7 +48,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: CalculatorScreen());
+    return MaterialApp(
+      theme: AppTheme.darkTheme,
+      home: const CalculatorScreen(),
+    );
   }
 }
 
@@ -176,7 +181,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     return Scaffold(
       key: _ScaffoldKey,
       drawer: TheDrawer(history: history),
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.background,
 
       body: SafeArea(
         child: Column(
@@ -195,11 +200,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 onBtnPressed: handleButtonPress,
                 backspace: controller.text.isNotEmpty,
                 onhistoryPressed: () => _ScaffoldKey.currentState!.openDrawer(),
-                
               ),
             ),
             SizedBox(height: 20.0),
-            Expanded(flex: 9, child: Keyboard(onBtnPressed: handleButtonPress, )),
+            Expanded(flex: 9, child: Keyboard(onBtnPressed: handleButtonPress)),
           ],
         ),
       ),

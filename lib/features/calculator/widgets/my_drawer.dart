@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:calcflow/core/constants/app_colors.dart';
 
 class TheDrawer extends StatefulWidget {
   final List<String> history;
@@ -15,7 +16,7 @@ class _TheDrawerState extends State<TheDrawer> {
       width: MediaQuery.of(context).size.width * 0.8,
       child: Drawer(
         child: Container(
-          color: Colors.black87,
+          color: AppColors.background,
           child: SafeArea(
             child: Column(
               children: [

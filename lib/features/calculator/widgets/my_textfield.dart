@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:calcflow/core/constants/app_colors.dart';
 
 class MyTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -31,7 +32,7 @@ class MyTextField extends StatelessWidget {
                   autofocus: true,
                   maxLines: null,
                   textAlign: TextAlign.right,
-                  style: TextStyle(fontSize: 48, color: Colors.white),
+                  style: TextStyle(fontSize: 48, color: AppColors.textPrimary),
                   decoration: InputDecoration(border: InputBorder.none),
                 ),
               ],
@@ -70,7 +71,7 @@ class _MyDisplayTotalState extends State<MyDisplayTotal> {
                   //maxLines: 2,
                   //overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.textPrimary,
                     fontSize: 40,
                     fontWeight: FontWeight.w400,
                   ),

@@ -7,7 +7,8 @@ class AppColors {
   /// Button
   static const Color numberbtn = Color.fromARGB(199, 33, 32, 32);
   static const Color functionbtn = Color.fromARGB(255, 75, 74, 74);
-  static const Color equalsbtn = Colors.green;
+  static const Color greenbtns = Colors.green;
+  static const Color unusedbtns = Colors.grey;
   static const Color operatorbtn = Colors.white;
 
   /// text
