@@ -48,10 +48,13 @@ class Keyboard extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding: const EdgeInsets.all(8.0),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 4,
         mainAxisSpacing: 8.0,
         crossAxisSpacing: 8.0,
+        childAspectRatio:
+            (MediaQuery.of(context).size.width - 32) /
+            (MediaQuery.of(context).size.height * 0.40),
       ),
       itemCount: buttons.length,
       itemBuilder: (context, index) {
